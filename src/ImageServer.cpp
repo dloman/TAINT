@@ -62,7 +62,6 @@ int main(int argc, const char** argv)
               {
                 try
                 {
-
                   std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
                   ParseRequest(Bytes);
@@ -91,16 +90,6 @@ int main(int argc, const char** argv)
                 }
               }
             });
-
-          auto SessionId = pSession->GetSessionId();
-          pSession->GetOnDisconnectSignal().Connect(
-            [SessionId]
-            {
-              std::cout
-                << "Session Id " << SessionId
-                << " Disconnected" << std::endl;
-            });
-
         }
       });
 
