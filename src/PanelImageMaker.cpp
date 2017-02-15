@@ -81,12 +81,12 @@ namespace taint
     Image.DrawCircle(420, 415, 12, {192, 192, 192});
     if (Values[0])
     {
-      Image.DrawLine(398, 370, 442, 370, {255, 255, 255}, 8);
+      Image.DrawLine(420, 348, 420, 392, {255, 255, 255}, 8);
       Image.DrawCircle(420, 415, 10, {100, 30, 30});
     }
     else
     {
-      Image.DrawLine(420, 348, 420, 392, {255, 255, 255}, 8);
+      Image.DrawLine(398, 370, 442, 370, {255, 255, 255}, 8);
       Image.DrawCircle(420, 415, 10, {255, 60, 60});
     }
 
@@ -100,12 +100,12 @@ namespace taint
     Image.DrawCircle(420, 595, 12, {192, 192, 192});
     if (Values[2])
     {
-      Image.DrawLine(400, 560, 442, 540, {255, 255, 255}, 8);
+      Image.DrawLine(420, 528, 420, 572, {255, 255, 255}, 8);
       Image.DrawCircle(420, 595, 10, {100, 30, 30});
     }
     else
     {
-      Image.DrawLine(398, 550, 442, 550, {255, 255, 255}, 8);
+      Image.DrawLine(400, 560, 442, 540, {255, 255, 255}, 8);
       Image.DrawCircle(420, 595, 10, {255, 60, 60});
     }
 
