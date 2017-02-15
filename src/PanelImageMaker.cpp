@@ -1,5 +1,6 @@
 #include "PanelImageMaker.hpp"
 #include <Images/Image.hpp>
+#include <bitset>
 
 #include <iostream>
 
@@ -37,7 +38,7 @@ namespace taint
   static void DrawRow(
     dl::image::Image& Image,
     const size_t Index,
-    std::array<bool, 4> Values)
+    std::bitset<4> Values)
 
   {
     std::vector<uint8_t> OnColor = {255, 60, 60};
@@ -72,7 +73,7 @@ namespace taint
   //---------------------------------------------------------------------------
   static void DrawColumn(
     dl::image::Image& Image,
-    std::array<bool, 4> Values)
+    std::bitset<4> Values)
 
   {
     Image.DrawCircle(420, 370, 28, {192, 192, 192});
@@ -145,12 +146,12 @@ namespace taint
 
     DrawTopStuff(Image);
 
-    DrawRow(Image, 0, {1, 0, 1, 1});
-    DrawRow(Image, 1, {1, 1, 0, 1});
-    DrawRow(Image, 2, {1, 0, 1, 1});
-    DrawRow(Image, 3, {1, 1, 1, 0});
+    DrawRow(Image, 0, Values[0]);
+    DrawRow(Image, 1, Values[1]);
+    DrawRow(Image, 2, Values[2]);
+    DrawRow(Image, 3, Values[3]);
 
-    DrawColumn(Image, {1, 1, 1, 1});
+    DrawColumn(Image, Values[4]);
     return Image;
   }
 }
