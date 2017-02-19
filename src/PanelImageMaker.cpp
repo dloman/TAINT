@@ -76,37 +76,47 @@ namespace taint
     std::bitset<4> Values)
 
   {
+    std::vector<uint8_t> OffRed{90, 20, 20};
+    std::vector<uint8_t> OnRed{255, 60, 60};
+
     Image.DrawCircle(420, 370, 28, {192, 192, 192});
     Image.DrawCircle(420, 370, 24, {0, 0, 0});
     Image.DrawCircle(420, 415, 12, {192, 192, 192});
     if (Values[0])
     {
-      Image.DrawLine(420, 348, 420, 392, {255, 255, 255}, 8);
-      Image.DrawCircle(420, 415, 10, {100, 30, 30});
+      Image.DrawLine(398, 370, 442, 370, {255, 255, 255}, 8);
+      Image.DrawCircle(420, 415, 10, OnRed);
     }
     else
     {
-      Image.DrawLine(398, 370, 442, 370, {255, 255, 255}, 8);
-      Image.DrawCircle(420, 415, 10, {255, 60, 60});
+      Image.DrawLine(420, 348, 420, 392, {255, 255, 255}, 8);
+      Image.DrawCircle(420, 415, 10, OffRed);
     }
 
     Image.DrawCircle(420, 460, 28, {192, 192, 192});
     Image.DrawCircle(420, 460, 24, {0, 0, 0});
     Image.DrawCircle(420, 505, 12, {192, 192, 192});
-    Image.DrawCircle(420, 505, 10, {255, 60, 60});
+    if (Values[1])
+    {
+      Image.DrawCircle(420, 505, 10, OnRed);
+    }
+    else
+    {
+      Image.DrawCircle(420, 505, 10, OffRed);
+    }
 
     Image.DrawCircle(420, 550, 28, {192, 192, 192});
     Image.DrawCircle(420, 550, 24, {255, 40, 40});
     Image.DrawCircle(420, 595, 12, {192, 192, 192});
     if (Values[2])
     {
-      Image.DrawLine(420, 528, 420, 572, {255, 255, 255}, 8);
-      Image.DrawCircle(420, 595, 10, {100, 30, 30});
+      Image.DrawLine(400, 560, 442, 540, {255, 255, 255}, 8);
+      Image.DrawCircle(420, 595, 10, OnRed);
     }
     else
     {
-      Image.DrawLine(400, 560, 442, 540, {255, 255, 255}, 8);
-      Image.DrawCircle(420, 595, 10, {255, 60, 60});
+      Image.DrawLine(420, 528, 420, 572, {255, 255, 255}, 8);
+      Image.DrawCircle(420, 595, 10, OffRed);
     }
 
     Image.DrawCircle(420, 640, 30, {255, 40, 40});
@@ -118,7 +128,14 @@ namespace taint
     Image.DrawLine(420, 640, 420, 670, {255, 40, 40}, 8);
 
     Image.DrawCircle(420, 685, 12, {192, 192, 192});
-    Image.DrawCircle(420, 685, 10, {255, 60, 60});
+    if (Values[3])
+    {
+      Image.DrawCircle(420, 685, 10, OnRed);
+    }
+    else
+    {
+      Image.DrawCircle(420, 685, 10, OffRed);
+    }
   }
 
   //---------------------------------------------------------------------------
